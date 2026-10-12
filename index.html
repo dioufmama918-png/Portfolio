@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Ndeye Mama DIOUF">
+<meta name="description" content="Portfolio de Ndeye Mama DIOUF : géomatique, SIG et télédétection.">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ndeye Mama DIOUF | Portfolio Géomatique & SIG</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+<style>
+
+:root{
+  --navy:#0f172a; --navy2:#1e293b; --bg:#f8fafc; --band:#eef2f6; --card:#ffffff;
+  --ink:#1e293b; --muted:#5b6b80; --line:#dde4ec; --on-dark:#f1f5f9; --on-dark-muted:#a3b1c4;
+  --brand:#5d7a1f; --brand-d:#4a6318; --brand-l:#c3dc72; --brand-soft:#e9f1d2;
+  --rs-bg:#dbeafe; --rs-fg:#1e40af; --gis-bg:#ede9fe; --gis-fg:#5b21b6; --dl-bg:#ffe4e6; --dl-fg:#9f1239; --urb-bg:#fef3c7; --urb-fg:#92400e;
+  --display:"Syne","Trebuchet MS",sans-serif; --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+h1,h2,h3,h4,.display{font-family:var(--display)}
+.in{max-width:1120px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:2px solid var(--brand-l);outline-offset:3px}
+button{font-family:inherit}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--on-dark);box-shadow:0 2px 10px rgba(15,23,42,.25)}
+nav .in{display:flex;align-items:center;gap:16px;padding-block:12px}
+.logo{font:700 1.15rem var(--display);color:var(--brand-l);letter-spacing:.06em;white-space:nowrap}
+.links{display:flex;gap:20px;overflow-x:auto;flex:1;min-width:0;justify-content:flex-end;scrollbar-width:none}
+.links a{color:var(--on-dark);text-decoration:none;font:500 .9rem var(--display);white-space:nowrap}
+.links a:hover{color:var(--brand-l)}
+.lang{display:flex;border:1px solid var(--brand);border-radius:6px;overflow:hidden;flex:none}
+.lang button{font:600 .78rem var(--body);padding:6px 11px;border:0;background:transparent;color:var(--on-dark);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand);color:var(--card)}
+
+.hero{background:var(--navy);color:var(--on-dark);text-align:center;
+  background-image:linear-gradient(to right,rgba(148,163,184,.1) 1px,transparent 1px),linear-gradient(to bottom,rgba(148,163,184,.1) 1px,transparent 1px);background-size:30px 30px}
+.hero .in{max-width:820px;padding-block:72px 80px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.badge{font:600 .72rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--brand-l);border:1px solid var(--brand-d);background:rgba(93,122,31,.3);padding:5px 14px;border-radius:999px}
+h1{font-weight:800;font-size:clamp(2.2rem,7vw,3.8rem);line-height:1.05;margin:6px 0 0;letter-spacing:-.02em;text-wrap:balance}
+.sub{font:600 clamp(1.1rem,3vw,1.5rem) var(--display);color:var(--brand-l);margin:0}
+.hero p.bio{color:var(--on-dark-muted);max-width:40em;margin:6px 0 10px;font-size:1.05rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{font:500 .95rem var(--body);padding:11px 22px;border-radius:8px;text-decoration:none;color:var(--on-dark);border:1px solid #475569;cursor:pointer;background:transparent}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--card)}
+.btn:hover{border-color:var(--brand-l)}
+
+section{padding-block:60px;scroll-margin-top:56px}
+section.band{background:var(--band)}
+.head{text-align:center;margin-bottom:36px}
+h2{font-weight:700;font-size:1.85rem;margin:0;color:var(--navy);text-wrap:balance}
+.head p{color:var(--muted);margin:8px 0 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 1px 3px rgba(15,23,42,.05);min-width:0}
+.box h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-d);margin:0 0 8px}
+.box p,.box li{font-size:.92rem;color:var(--muted);margin:0}
+.box ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.box .foot-note{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:.8rem}
+.stat{text-align:center;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.stat b{font:800 2.6rem var(--display);color:var(--navy);line-height:1}
+.stat span{font:600 .82rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.tool h3{font-size:1.05rem;margin:0 0 8px;color:var(--navy)}
+.tool svg{width:30px;height:30px;color:var(--brand);margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.chips button{font:500 .85rem var(--body);padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-dark)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(15,23,42,.05);min-width:0;transition:box-shadow .2s}
+.card:hover{box-shadow:0 8px 22px rgba(15,23,42,.1)}
+.thumb{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box}
+.thumb.empty,.slide-img.empty{background-color:var(--navy2);background-image:linear-gradient(to right,rgba(148,163,184,.14) 1px,transparent 1px),linear-gradient(to bottom,rgba(148,163,184,.14) 1px,transparent 1px);background-size:30px 30px}
+.ph{font:500 .8rem var(--body);color:var(--on-dark-muted);border:1px dashed #64748b;padding:6px 14px;border-radius:6px;background:var(--navy2)}
+.thumb .tag-over{position:absolute;top:10px;right:10px;background:rgba(15,23,42,.88);color:var(--on-dark);font:500 .68rem var(--body);padding:4px 9px;border-radius:5px}
+.card .body{padding:22px;flex:1;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.cat{font:600 .74rem var(--body);padding:4px 9px;border-radius:5px}
+.c-rs{background:var(--rs-bg);color:var(--rs-fg)} .c-gis{background:var(--gis-bg);color:var(--gis-fg)}
+.c-dl{background:var(--dl-bg);color:var(--dl-fg)} .c-urb{background:var(--urb-bg);color:var(--urb-fg)}
+.when{font-size:.78rem;color:var(--muted);font-weight:500}
+.card h3{font-size:1.2rem;line-height:1.25;margin:0;color:var(--navy);text-wrap:balance}
+.card p{margin:0;font-size:.92rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:.74rem;background:var(--band);color:var(--ink);padding:3px 9px;border-radius:5px;border:1px solid var(--line)}
+.card .foot{padding:13px 22px;background:var(--bg);border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.card .foot b{color:var(--brand-d);font-weight:600}
+
+.slider{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(15,23,42,.1);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.slide-img{background:var(--navy);min-height:340px;display:flex;align-items:center;justify-content:center;padding:16px}
+.slide-img img{max-height:420px;max-width:100%;object-fit:contain;border-radius:4px}
+.slide-txt{padding:30px;display:flex;flex-direction:column;gap:12px;min-width:0;background:var(--bg)}
+.slide-txt h3{font-size:1.45rem;line-height:1.2;margin:0;color:var(--navy)}
+.slide-txt p{margin:0;font-size:.93rem;color:var(--muted)}
+.meth{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.meth h4{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-d);margin:0 0 4px}
+.count{font:700 .78rem var(--body);color:var(--muted)}
+.slide-nav{display:flex;gap:10px;margin-top:auto;padding-top:8px}
+.slide-nav button{width:42px;height:42px;border-radius:50%;border:0;background:var(--navy);color:var(--on-dark);font-size:1.1rem;cursor:pointer}
+.slide-nav button:hover{background:var(--brand)}
+
+.timeline{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:22px;border-left:2px solid var(--line);padding-left:26px}
+.tl{position:relative}
+.tl::before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--brand);border:3px solid var(--bg);box-sizing:border-box}
+.band .tl::before{border-color:var(--band)}
+.tl .yr{font:700 .78rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--brand-d)}
+.tl h3{font-size:1.1rem;margin:2px 0;color:var(--navy)}
+.tl p{margin:0;font-size:.92rem;color:var(--muted)}
+
+.contact{background:var(--navy);color:var(--on-dark);text-align:center}
+.contact h2{color:var(--on-dark)}
+.contact p{color:var(--on-dark-muted);max-width:38em;margin:12px auto 22px}
+.cline{display:inline-block;font:500 1rem var(--body);color:var(--brand-l);border:1px solid var(--brand-d);border-radius:8px;padding:12px 20px;user-select:all;overflow-wrap:anywhere}
+footer{background:var(--navy);color:var(--on-dark-muted);text-align:center;font-size:.8rem;padding:18px 20px 26px;border-top:1px solid var(--navy2)}
+@media (max-width:760px){ .slider{grid-template-columns:minmax(0,1fr)} .slide-img{min-height:220px} .links{justify-content:flex-start} section{padding-block:44px} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;scroll-behavior:auto!important} }
+
+
+button.thumb,button.slide-img{border:0;font:inherit;cursor:zoom-in;width:100%;padding:0}
+button.thumb{height:250px;border-bottom:1px solid var(--line);background:var(--card)}
+.thumb img{transition:transform .3s}
+.card:hover .thumb img{transform:scale(1.03)}
+button.slide-img{padding:16px;background:var(--navy)}
+.others-title{font-size:1.25rem;color:var(--navy);margin:44px 0 16px;text-align:center}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.other{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0}
+.other h4{font-size:.98rem;margin:0;color:var(--navy);line-height:1.3}
+.other p{margin:6px 0 0;font-size:.88rem;color:var(--muted)}
+.other .row{align-items:flex-start;flex-wrap:nowrap}
+.other .when{white-space:nowrap;color:var(--brand-d);font-weight:600}
+.clines{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.contact p.where{margin:20px auto 0;font-size:.9rem}
+[hidden]{display:none!important}
+.lnk{color:var(--brand-d);font-weight:700;text-decoration:none}.lnk:hover{text-decoration:underline}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(15,23,42,.95);display:flex;flex-direction:column;
+  padding:calc(10px + env(safe-area-inset-top,0px)) 12px calc(12px + env(safe-area-inset-bottom,0px))}
+.lb-bar{display:flex;align-items:center;gap:12px;padding-bottom:10px;color:var(--on-dark)}
+.lb-cap{flex:1;min-width:0;font:600 .95rem var(--display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid #475569;background:transparent;color:var(--on-dark);font-size:1rem;cursor:pointer}
+.lb-close:hover{background:var(--brand)}
+.lb-tabs{display:flex;border:1px solid var(--brand);border-radius:6px;overflow:hidden;flex:none}
+.lb-tabs button{font:600 .8rem var(--body);padding:7px 12px;border:0;background:transparent;color:var(--on-dark);cursor:pointer}
+.lb-tabs button[aria-pressed="true"]{background:var(--brand);color:var(--card)}
+.lb-body{flex:1;min-height:0;overflow:auto;display:flex;align-items:center;justify-content:center}
+.lb-body img{max-width:100%;max-height:100%;object-fit:contain;background:var(--card);border-radius:4px}
+.lightbox.cv .lb-body{align-items:flex-start}
+.lightbox.cv .lb-body img{max-height:none;width:min(100%,900px);height:auto}
+</style>
+
+</head>
+<body>
+<nav><div class="in">
+  <span class="logo">N. M. DIOUF</span>
+  <div class="links" id="links"></div>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button id="btn-fr" type="button" aria-pressed="true">FR</button>
+    <button id="btn-en" type="button" aria-pressed="false">EN</button>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="in">
+  <span class="badge" data-i="badge"></span>
+  <h1>Ndeye Mama DIOUF</h1>
+  <p class="sub" data-i="sub"></p>
+  <p class="bio" data-i="bio"></p>
+  <div class="btns">
+    <button class="btn primary" type="button" data-go="projects" data-i="b1"></button>
+    <button class="btn" type="button" data-go="cartotheque" data-i="b2"></button>
+    <button class="btn" type="button" id="cv-open" data-i="b3"></button>
+  </div>
+</div></header>
+
+<section id="about"><div class="in"><div class="grid3" id="aboutGrid"></div></div></section>
+
+<section id="skills" class="band"><div class="in">
+  <div class="head"><h2 data-i="skT"></h2><p data-i="skS"></p></div>
+  <div class="grid4" id="skillGrid"></div>
+</div></section>
+
+<section id="projects"><div class="in">
+  <div class="head"><h2 data-i="prT"></h2><p data-i="prS"></p></div>
+  <div class="chips" id="chips"></div>
+  <div class="grid2" id="projGrid"></div>
+  <h3 class="others-title" data-i="otT"></h3>
+  <div class="others" id="others"></div>
+</div></section>
+
+<section id="cartotheque" class="band"><div class="in">
+  <div class="head"><h2 data-i="caT"></h2><p data-i="caS"></p></div>
+  <div class="slider" id="slider" aria-live="polite"></div>
+</div></section>
+
+<section id="parcours"><div class="in">
+  <div class="head"><h2 data-i="paT"></h2></div>
+  <div class="timeline" id="timeline"></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="in">
+  <h2 data-i="coT"></h2>
+  <p data-i="coS"></p>
+  <div class="clines">
+    <span class="cline">dioufmama918@gmail.com</span>
+    <span class="cline">+33 6 41 98 63 44</span>
+  </div>
+  <p class="where" data-i="coW"></p>
+</div></section>
+<footer><span id="foot"></span></footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lb-bar">
+    <div class="lb-tabs" id="lb-tabs" hidden>
+      <button type="button" data-cv="alternance" aria-pressed="true">Alternance</button>
+      <button type="button" data-cv="stage" aria-pressed="false">Stage</button>
+    </div>
+    <span class="lb-cap" id="lb-cap"></span>
+    <button type="button" class="lb-close" id="lb-close" aria-label="Fermer / Close">✕</button>
+  </div>
+  <div class="lb-body"><img id="lb-img" alt=""></div>
+</div>
+
+<script>
+const NAME = "Ndeye Mama DIOUF";
+const T = {
+ fr:{nav:{about:"À propos",skills:"Compétences",projects:"Projets",cartotheque:"Cartothèque",parcours:"Parcours",contact:"Contact"},
+  badge:"Recherche alternance ou stage · Disponible dès que possible", sub:"Géomaticienne · SIG & télédétection",
+  bio:"Étudiante en Master Géomatique et Modélisation Spatiale à Aix-Marseille Université. J'associe l'analyse SIG, la télédétection et le code à une solide expérience de collecte et d'analyse de données de terrain, du Bassin arachidier sénégalais à Marseille.",
+  b1:"Découvrir mes projets", b2:"Consulter la cartothèque", b3:"📄 Mon CV (aperçu)",
+  skT:"Boîte à outils technique", skS:"Les logiciels, langages et données que j'utilise dans mes projets.",
+  prT:"Projets techniques & réalisations", prS:"Télédétection, analyse spatiale, deep learning et traitement de données géographiques.",
+  otT:"Autres travaux",
+  caT:"Ma cartothèque", caS:"Défilement de mes productions cartographiques. Cliquez sur une carte pour l'agrandir.",
+  paT:"Cursus & expériences", coT:"Travaillons ensemble !",
+  coS:"Je recherche un contrat d'apprentissage (2 semaines en entreprise / 2 semaines à l'école) ou un stage de 2 à 6 mois en géomatique, analyse SIG ou télédétection.",
+  coW:"📍 Aix-en-Provence · Mobilité nationale", zoom:"Agrandir", cvCap:"CV", ongoing:"En cours", meth:"Méthode & données",
+  foot:"Fait avec passion pour la géomatique. Tous droits réservés.",
+  cats:{all:"Tout",rs:"Télédétection",gis:"SIG & données",dl:"Deep learning",urb:"Urbain"},
+  about:[["Profil","Géographe de formation, diplômée d'un master en aménagement du territoire au Sénégal, je me spécialise en géomatique à Aix-Marseille. Mon profil associe cartographie, traitement d'images satellite, bases de données spatiales et enquêtes de terrain.","🗣️ Français · Anglais B1 · Allemand A1"],
+         ["8","Projets détaillés","Deux mémoires de recherche, six projets techniques et vingt cartes et figures dans la cartothèque."],
+         ["Aptitudes clés",["🧭 Rigueur de terrain : enquêtes, relevés GPS, saisie","🤝 Travail collectif : projets de groupe, vie associative","✍️ Rédaction : deux mémoires, rapports en français et en anglais"]]],
+  skills:[["SIG & webmapping","QGIS, ArcGIS, ArcGIS Pro, FME, Leaflet, DepthmapX. Cartographie thématique, analyse spatiale, automatisation de flux de données."],
+          ["Bases de données","PostgreSQL / PostGIS : vues matérialisées, fonctions SQL, requêtes spatiales."],
+          ["Code & data science","Python (rasterio, geopandas, scikit-learn, PyTorch), Google Earth Engine, VS Code."],
+          ["Télédétection & terrain","ENVI, TerrSet. Landsat, Sentinel-2, MODIS, Pléiades, HySpex, LiDAR HD. KoboCollect, GPS, drone."]],
+  tl:[["2025 – 2027","Master Géomatique et Modélisation Spatiale","Aix-Marseille Université","Analyse spatiale avancée, bases de données spatiales, télédétection, géostatistiques."],
+      ["Fév. – juil. 2025","Stage au Laboratoire de Géomatique et d'Environnement","Université Assane Seck de Ziguinchor","Formation d'étudiants en cartographie, statistiques et SIG. Appui au directeur pour l'organisation des activités pédagogiques et de recherche, et aux enseignants-chercheurs pour le montage de projets."],
+      ["2023 – 2025","Master Aménagement et Territoire","Université Assane Seck de Ziguinchor · diplômée en août 2025","Mémoire sur l'impact de la migration sur le développement agricole des terroirs de Dangalma : enquêtes de terrain, changements d'occupation du sol, cartographie."],
+      ["Août – oct. 2024","Enquêtrice de terrain pour le mémoire de master","Terroirs de Dangalma, Sénégal","Conception et déploiement des enquêtes avec KoboCollect, collecte et analyse de données géographiques multi-sources."],
+      ["Mai – juin 2023","Enquêtrice, Recensement général de la population (RGPH5)","Sénégal","Collecte de données socio-démographiques sur le terrain, saisie et contrôle des données numériques."],
+      ["2020 – 2023","Licence en Géographie","Université Assane Seck de Ziguinchor · diplômée en mai 2023","Projet de fin de licence sur les changements d'occupation du sol à Diembéring. Sorties de terrain sur la Petite Côte (Mbour, Joal, Saly) puis au DAC de Séfa (Sédhiou) en master 1."],
+      ["2023 – 2025","Engagements et formations","Ziguinchor · Dangalma","Trésorière générale de la Green Team Ziguinchor, secrétaire générale de l'Amicale des étudiants de Dangalma. Formation « Drones dans l'agriculture » à l'Orange Digital Center (mai 2025)."]],
+  others:[["Îlot de chaleur urbain à Marseille","Température de surface et NDVI Landsat dans Google Colab, puis profils thermiques jour/nuit MODIS-VIIRS sur plus de vingt ans.","En cours"],
+          ["SIG en santé publique, commune de Dangalma","Cartographie des infrastructures sanitaires et pharmaceutiques, accessibilité des populations aux soins (QGIS, OpenStreetMap, GPS).","En cours"],
+          ["Occupation du sol du sud du Bassin arachidier, 1995 – 2025","Classifications Landsat à quatre dates dans Google Earth Engine : Random Forest, K-Means et indices spectraux.",""],
+          ["Déforestation en Afrique subsaharienne","Classification du couvert forestier, détection de changements et indicateurs REDD+.",""]]},
+ en:{nav:{about:"About",skills:"Skills",projects:"Projects",cartotheque:"Map gallery",parcours:"Background",contact:"Contact"},
+  badge:"Seeking an apprenticeship or internship · Available now", sub:"Geomatics · GIS & remote sensing",
+  bio:"MSc student in Geomatics and Spatial Modelling at Aix-Marseille University. I combine GIS analysis, remote sensing and code with solid experience in collecting and analysing field data, from Senegal's Groundnut Basin to Marseille.",
+  b1:"See my projects", b2:"Browse the map gallery", b3:"📄 My CV (preview)",
+  skT:"Technical toolbox", skS:"The software, languages and datasets I use in my projects.",
+  prT:"Technical projects", prS:"Remote sensing, spatial analysis, deep learning and geographic data processing.",
+  otT:"Other work",
+  caT:"My map gallery", caS:"A slideshow of my cartographic work. Click a map to enlarge it.",
+  paT:"Education & experience", coT:"Let's work together!",
+  coS:"I am looking for an apprenticeship contract (2 weeks in the company / 2 weeks at university) or a 2 to 6 month internship in geomatics, GIS analysis or remote sensing.",
+  coW:"📍 Aix-en-Provence · Open to relocation anywhere in France", zoom:"Enlarge", cvCap:"CV (in French)", ongoing:"In progress", meth:"Method & data",
+  foot:"Made with a passion for geomatics. All rights reserved.",
+  cats:{all:"All",rs:"Remote sensing",gis:"GIS & data",dl:"Deep learning",urb:"Urban"},
+  about:[["Profile","A geographer by training with a master's degree in spatial planning from Senegal, I am now specialising in geomatics at Aix-Marseille. My profile combines cartography, satellite image processing, spatial databases and field surveys.","🗣️ French · English B1 · German A1"],
+         ["8","Detailed projects","Two research theses, six technical projects and twenty maps and figures in the gallery."],
+         ["Key strengths",["🧭 Field rigour: surveys, GPS readings, data entry","🤝 Teamwork: group projects, student associations","✍️ Writing: two theses, reports in French and English"]]],
+  skills:[["GIS & web mapping","QGIS, ArcGIS, ArcGIS Pro, FME, Leaflet, DepthmapX. Thematic mapping, spatial analysis, automated data workflows."],
+          ["Databases","PostgreSQL / PostGIS: materialised views, SQL functions, spatial queries."],
+          ["Code & data science","Python (rasterio, geopandas, scikit-learn, PyTorch), Google Earth Engine, VS Code."],
+          ["Remote sensing & fieldwork","ENVI, TerrSet. Landsat, Sentinel-2, MODIS, Pléiades, HySpex, LiDAR HD. KoboCollect, GPS, drone."]],
+  tl:[["2025 – 2027","MSc Geomatics and Spatial Modelling","Aix-Marseille University","Advanced spatial analysis, spatial databases, remote sensing, geostatistics."],
+      ["Feb – Jul 2025","Internship, Geomatics and Environment Laboratory","Assane Seck University of Ziguinchor","Trained students in cartography, statistics and GIS. Supported the director in organising teaching and research activities, and researchers in setting up projects."],
+      ["2023 – 2025","Master's in Spatial Planning","Assane Seck University of Ziguinchor · graduated August 2025","Thesis on the impact of migration on agricultural development in the village lands of Dangalma: field surveys, land cover change, cartography."],
+      ["Aug – Oct 2024","Field surveyor for the master's thesis","Village lands of Dangalma, Senegal","Designed and ran the surveys with KoboCollect, collected and analysed multi-source geographic data."],
+      ["May – Jun 2023","Enumerator, General Population Census (RGPH5)","Senegal","Collected socio-demographic data in the field, entered and checked digital records."],
+      ["2020 – 2023","Bachelor's in Geography","Assane Seck University of Ziguinchor · graduated May 2023","Final project on land cover change in Diembéring. Field trips on the Petite Côte (Mbour, Joal, Saly), then to the DAC of Séfa (Sédhiou) during the first master's year."],
+      ["2023 – 2025","Commitments and training","Ziguinchor · Dangalma","Treasurer of the Green Team Ziguinchor, general secretary of the Dangalma students' association. \"Drones in agriculture\" training at the Orange Digital Center (May 2025)."]],
+  others:[["Urban heat island in Marseille","Landsat land surface temperature and NDVI in Google Colab, then MODIS-VIIRS day/night thermal profiles over more than twenty years.","In progress"],
+          ["Public health GIS, Dangalma commune","Mapping of health and pharmacy facilities and of the population's access to care (QGIS, OpenStreetMap, GPS).","In progress"],
+          ["Land cover of the southern Groundnut Basin, 1995 – 2025","Landsat classifications at four dates in Google Earth Engine: Random Forest, K-Means and spectral indices.",""],
+          ["Deforestation in Sub-Saharan Africa","Forest cover classification, change detection and REDD+ indicators.",""]]}
+};
+
+const P = [
+ {cats:["rs"], img:"img/bassin_arachidier_zone.jpg", when:"2025 – 2026",
+  fr:{kind:"Mémoire de Master 1", t:"Sensibilité de la végétation aux précipitations dans le sud du Bassin arachidier",
+   d:"Analyse de la réponse du couvert végétal à la pluie et à la température sur 2000 – 2025. Sur 200 points d'échantillonnage, 152 sont retenus après filtrage statistique. Le cumul de pluie sur six mois est le meilleur prédicteur du NDVI (r = 0,52), et un modèle Random Forest associant pluie et température de surface atteint un R² de 0,86 en validation croisée, contre 0,71 avec la pluie seule.",
+   place:"Kaffrine, Fatick, Kaolack · Sénégal", data:"MODIS MOD13Q1 et LST, CHIRPS, ESA WorldCover", tags:["Google Earth Engine","Python","scikit-learn","QGIS","Mann-Kendall","Random Forest"]},
+  en:{kind:"Master 1 thesis", t:"Vegetation sensitivity to rainfall in the southern Groundnut Basin",
+   d:"Analysis of how vegetation cover responds to rainfall and temperature over 2000 – 2025. Out of 200 sampling points, 152 are kept after statistical filtering. Six-month cumulative rainfall is the best predictor of NDVI (r = 0.52), and a Random Forest model combining rainfall and land surface temperature reaches a cross-validated R² of 0.86, against 0.71 with rainfall alone.",
+   place:"Kaffrine, Fatick, Kaolack · Senegal", data:"MODIS MOD13Q1 and LST, CHIRPS, ESA WorldCover", tags:["Google Earth Engine","Python","scikit-learn","QGIS","Mann-Kendall","Random Forest"]}},
+ {cats:["rs","gis"], img:"img/dangalma_changements.jpg", when:"2023 – 2025",
+  fr:{kind:"Mémoire de Master", t:"Migration et développement agricole dans les terroirs de Dangalma",
+   d:"Mémoire associant enquêtes et télédétection. J'ai enquêté 295 ménages dans 19 villages avec KoboCollect et cartographié l'occupation du sol à quatre dates par classification supervisée d'images Landsat. Les cartes montrent le recul des terres de culture, de 7 631 ha en 1973 à 6 671 ha en 2013, au profit du bâti.",
+   place:"Commune de Dangalma · Sénégal", data:"Landsat 1973, 1995, 2013, 2024 · SRTM", tags:["ENVI","ArcGIS","KoboCollect","Maximum de vraisemblance","Excel"]},
+  en:{kind:"Master's thesis", t:"Migration and agricultural development in the village lands of Dangalma",
+   d:"A thesis combining surveys and remote sensing. I surveyed 295 households in 19 villages with KoboCollect and mapped land cover at four dates through supervised classification of Landsat images. The maps show cropland shrinking from 7,631 ha in 1973 to 6,671 ha in 2013, replaced by built-up areas.",
+   place:"Dangalma commune · Senegal", data:"Landsat 1973, 1995, 2013, 2024 · SRTM", tags:["ENVI","ArcGIS","KoboCollect","Maximum likelihood","Excel"]}},
+ {cats:["dl","rs"], img:"img/ilbesai_fosses.jpg", when:"2026",
+  fr:{kind:"Segmentation sémantique", t:"Détecter le pillage archéologique avec un U-Net",
+   d:"Détection automatique des fosses de pillage sur une image Pléiades à 50 cm. Les fosses sont digitalisées dans QGIS, puis un U-Net à encodeur ResNet est entraîné sur des tuiles de 512 px avec une séparation géographique entre entraînement et validation. Résultat : IoU de 0,44 et F1 de 0,61 sur la classe pillage, 96 fosses vectorisées, et un modèle réappliqué sans réentraînement à deux nouvelles scènes.",
+   place:"Site d'Ilbe-Saï · Soudan", data:"Pléiades, 4 bandes (RVB + PIR)", tags:["Python","PyTorch","rasterio","geopandas","QGIS","U-Net + ResNet"]},
+  en:{kind:"Semantic segmentation", t:"Detecting archaeological looting with a U-Net",
+   d:"Automatic detection of looting pits on a 50 cm Pléiades image. Pits are digitised in QGIS, then a U-Net with a ResNet encoder is trained on 512 px tiles with a geographic split between training and validation. Result: IoU of 0.44 and F1 of 0.61 on the looting class, 96 pits vectorised, and a model reapplied without retraining to two new scenes.",
+   place:"Ilbe-Saï site · Sudan", data:"Pléiades, 4 bands (RGB + NIR)", tags:["Python","PyTorch","rasterio","geopandas","QGIS","U-Net + ResNet"]}},
+ {cats:["gis","urb"], img:"img/marseille13_hauteurs.jpg", when:"2026",
+  fr:{kind:"ETL spatial · projet à trois", t:"Enrichir les 28 656 bâtiments du 13e arrondissement de Marseille",
+   d:"Un workflow FME exécutable d'un seul tenant décrit chaque bâtiment de la BD TOPO par 123 attributs : hauteur issue du LiDAR HD, usage complété par OpenStreetMap, indicateurs géométriques et énergétiques, et 96 statistiques d'indices spectraux Landsat calculées en Python sur quatre dates. L'usage est connu pour 99,6 % des bâtiments.",
+   place:"Marseille 13e · France", data:"BD TOPO, LiDAR HD (47 dalles), Landsat 8, OSM, INSEE", tags:["FME","Python","rasterio","geopandas","EPSG:2154"]},
+  en:{kind:"Spatial ETL · team of three", t:"Enriching the 28,656 buildings of Marseille's 13th arrondissement",
+   d:"A single executable FME workflow describes each BD TOPO building with 123 attributes: height from LiDAR HD, use completed with OpenStreetMap, geometric and energy indicators, and 96 Landsat spectral index statistics computed in Python over four dates. Building use is known for 99.6% of buildings.",
+   place:"Marseille 13th · France", data:"BD TOPO, LiDAR HD (47 tiles), Landsat 8, OSM, INSEE", tags:["FME","Python","rasterio","geopandas","EPSG:2154"]}},
+ {cats:["rs","urb"], img:"img/toulouse_toitures.jpg", when:"2026",
+  fr:{kind:"Classification · projet à trois", t:"Détecter le bâti et les matériaux de toiture à Toulouse",
+   d:"Deux classifications du bâti sont comparées sur Sentinel-2 et validées sur 119 points contrôlés un à un : la distance minimale (MINDIST) l'emporte nettement sur l'angle spectral (Kappa de 0,51 contre 0,05, exactitude de 67 %). Sur l'image hyperspectrale HySpex à 2 m, les toits en tuile sont ensuite distingués des autres toitures.",
+   place:"Centre de Toulouse · France", data:"Sentinel-2 (10 bandes), HySpex (234 bandes retenues)", tags:["TerrSet","QGIS","ACP","MINDIST","SAM","Kappa"]},
+  en:{kind:"Classification · team of three", t:"Detecting buildings and roofing materials in Toulouse",
+   d:"Two built-up classifications are compared on Sentinel-2 and validated on 119 points checked one by one: minimum distance (MINDIST) clearly beats the spectral angle mapper (Kappa of 0.51 against 0.05, 67% accuracy). On the 2 m HySpex hyperspectral image, tile roofs are then separated from other roofing.",
+   place:"Toulouse city centre · France", data:"Sentinel-2 (10 bands), HySpex (234 bands retained)", tags:["TerrSet","QGIS","PCA","MINDIST","SAM","Kappa"]}},
+ {cats:["urb","gis"], img:"img/saint_nectaire_axial.jpg", when:"2026",
+  fr:{kind:"Syntaxe spatiale", t:"Quel village a le réseau de rues le plus linéaire ?",
+   d:"Comparaison des cartes axiales de six villages et villes d'Europe à partir de six indicateurs (choix, intégration, asymétrie, profondeur moyenne). Saint-Nectaire ressort comme le réseau le plus linéaire, avec une connectivité moyenne de 2,25 et la plus forte profondeur relative, et Keerbergen comme le plus maillé. Le classement est confirmé village par village sur OpenStreetMap.",
+   place:"Saint-Nectaire, Sułoszowa, Cumbernauld, La Carolina, Nördlingen, Keerbergen", data:"Cartes axiales, OpenStreetMap", tags:["DepthmapX","Space syntax","OpenStreetMap"]},
+  en:{kind:"Space syntax", t:"Which village has the most linear street network?",
+   d:"Comparison of the axial maps of six European villages and towns using six indicators (choice, integration, asymmetry, mean depth). Saint-Nectaire comes out as the most linear network, with a mean connectivity of 2.25 and the highest relative depth, and Keerbergen as the most meshed. The ranking is confirmed village by village on OpenStreetMap.",
+   place:"Saint-Nectaire, Sułoszowa, Cumbernauld, La Carolina, Nördlingen, Keerbergen", data:"Axial maps, OpenStreetMap", tags:["DepthmapX","Space syntax","OpenStreetMap"]}},
+ {cats:["rs"], img:"img/diembering_2021.jpg", when:"2022",
+  fr:{kind:"Projet de Licence 3", t:"Trente et un ans de changements d'occupation du sol à Diembéring",
+   d:"Premier projet complet de télédétection, du téléchargement des images à la carte finale : compositions colorées, correction géométrique, découpage de la zone, puis classification supervisée en classes adaptées à la Basse-Casamance (mangrove dense et peu dense, tannes, rizières, sols nus, végétation, eau, bâti) et comparaison des deux dates.",
+   place:"Commune de Diembéring, Basse-Casamance · Sénégal", data:"Landsat 5 TM (1990), Landsat 8 OLI (2021)", tags:["ENVI","ArcGIS","EarthExplorer","Classification supervisée"]},
+  en:{kind:"Bachelor's project", t:"Thirty-one years of land cover change in Diembéring",
+   d:"A first complete remote sensing project, from image download to final map: colour composites, geometric correction, clipping to the study area, then supervised classification into classes suited to Lower Casamance (dense and sparse mangrove, salt flats, rice fields, bare soil, vegetation, water, built-up) and comparison of the two dates.",
+   place:"Diembéring commune, Lower Casamance · Senegal", data:"Landsat 5 TM (1990), Landsat 8 OLI (2021)", tags:["ENVI","ArcGIS","EarthExplorer","Supervised classification"]}},
+ {cats:["rs"], img:"img/yamal_dynamiques.jpg", when:"2026", link:"https://github.com/moundirmbk24/Yamal/blob/main/Yamal4.ipynb",
+  fr:{kind:"Projet collectif", t:"Suivre l'emprise d'un port industriel arctique sur le pergélisol",
+   d:"Suivi par satellite de la construction du port d'Outrenni, sur la péninsule de Yamal. Les infrastructures sont détectées en combinant des indices spectraux Sentinel-2 (IBI, NDBI, BSI, NDVI, MNDWI) et le radar Sentinel-1 : leur emprise passe de 91 ha en 2016 à 923 ha en 2022. Des séries de température de surface MODIS et de NDVI comparent ensuite la zone du port à une toundra de référence.",
+   place:"Port d'Outrenni, Yamal · Russie", data:"Sentinel-2, Sentinel-1, MODIS MOD11A2", tags:["Google Earth Engine","Python","Google Colab","folium","Séries temporelles"]},
+  en:{kind:"Team project", t:"Tracking an Arctic industrial port's footprint on permafrost",
+   d:"Satellite monitoring of the construction of Port Utrenniy on the Yamal peninsula. Infrastructure is detected by combining Sentinel-2 spectral indices (IBI, NDBI, BSI, NDVI, MNDWI) with Sentinel-1 radar: its footprint grows from 91 ha in 2016 to 923 ha in 2022. MODIS land surface temperature and NDVI time series then compare the port area with a reference tundra.",
+   place:"Port Utrenniy, Yamal · Russia", data:"Sentinel-2, Sentinel-1, MODIS MOD11A2", tags:["Google Earth Engine","Python","Google Colab","folium","Time series"]}}
+];
+
+const C = [
+ {img:"img/dangalma_changements.jpg", cat:"rs",
+  fr:{k:"Détection de changements", t:"Changements d'occupation du sol à Dangalma, 1973 – 2024", d:"Progression, régression et stabilité de la végétation, des cultures, des sols nus et du bâti sur un demi-siècle.", m:"Landsat 1 MSS (1973) et Landsat 8 OLI (2024), classification supervisée par maximum de vraisemblance sous ENVI, mise en page sous ArcGIS. UTM zone 28N."},
+  en:{k:"Change detection", t:"Land cover change in Dangalma, 1973 – 2024", d:"Gain, loss and stability of vegetation, cropland, bare soil and built-up areas over half a century.", m:"Landsat 1 MSS (1973) and Landsat 8 OLI (2024), supervised maximum likelihood classification in ENVI, layout in ArcGIS. UTM zone 28N."}},
+ {img:"img/dangalma_1973.jpg", cat:"rs",
+  fr:{k:"Occupation du sol", t:"Occupation du sol de Dangalma en 1973", d:"État initial de la série : une commune presque entièrement occupée par les zones de culture.", m:"Landsat 1 MSS à 60 m, quatre classes : bâti, sol nu, zone de culture, végétation."},
+  en:{k:"Land cover", t:"Land cover of Dangalma in 1973", d:"The starting point of the series: a commune almost entirely covered by cropland.", m:"Landsat 1 MSS at 60 m, four classes: built-up, bare soil, cropland, vegetation."}},
+ {img:"img/dangalma_2024.jpg", cat:"rs",
+  fr:{k:"Occupation du sol", t:"Occupation du sol de Dangalma en 2024", d:"L'extension du bâti autour du chef-lieu et des villages de l'est de la commune est nette.", m:"Landsat 8 OLI-TIRS à 30 m, mêmes classes qu'en 1973 pour permettre la comparaison."},
+  en:{k:"Land cover", t:"Land cover of Dangalma in 2024", d:"Built-up growth around the main town and the eastern villages is clear.", m:"Landsat 8 OLI-TIRS at 30 m, same classes as in 1973 to allow comparison."}},
+ {img:"img/dangalma_mnt.jpg", cat:"gis",
+  fr:{k:"Relief", t:"Modèle numérique de terrain de Dangalma", d:"Un relief très plat, entre 12 et 27 m d'altitude, avec les villages enquêtés.", m:"SRTM, classes d'altitude, mise en page sous ArcGIS."},
+  en:{k:"Terrain", t:"Digital elevation model of Dangalma", d:"Very flat terrain, between 12 and 27 m in elevation, with the surveyed villages.", m:"SRTM, elevation classes, layout in ArcGIS."}},
+ {img:"img/bassin_arachidier_zone.jpg", cat:"gis",
+  fr:{k:"Carte de localisation", t:"Zone sud du Bassin arachidier", d:"Les trois régions étudiées dans le mémoire de Master 1 : Fatick, Kaolack et Kaffrine.", m:"Limites administratives ANAT, réseau routier et ferroviaire. UTM zone 28N."},
+  en:{k:"Location map", t:"Southern Groundnut Basin", d:"The three regions studied in the Master 1 thesis: Fatick, Kaolack and Kaffrine.", m:"ANAT administrative boundaries, road and rail network. UTM zone 28N."}},
+ {img:"img/pluie_ndvi_series.jpg", cat:"rs",
+  fr:{k:"Séries temporelles", t:"Variabilité pluviométrique et NDVI, 2000 – 2025", d:"Cumuls annuels, écarts à la moyenne, moyennes décennales et évolution conjointe de la pluie et du NDVI.", m:"CHIRPS et MODIS MOD13Q1 sur 152 points, traitement en Python."},
+  en:{k:"Time series", t:"Rainfall variability and NDVI, 2000 – 2025", d:"Annual totals, departures from the mean, decadal means and the joint evolution of rainfall and NDVI.", m:"CHIRPS and MODIS MOD13Q1 over 152 points, processed in Python."}},
+ {img:"img/ilbesai_fosses.jpg", cat:"dl",
+  fr:{k:"Deep learning", t:"Fosses de pillage détectées à Ilbe-Saï", d:"Les 96 fosses vectorisées par le modèle, en rouge sur l'image Pléiades.", m:"U-Net à encodeur ResNet (PyTorch), image Pléiades 4 bandes à 50 cm, vectorisation des prédictions."},
+  en:{k:"Deep learning", t:"Looting pits detected at Ilbe-Saï", d:"The 96 pits vectorised by the model, in red over the Pléiades image.", m:"U-Net with a ResNet encoder (PyTorch), 4-band Pléiades image at 50 cm, vectorised predictions."}},
+ {img:"img/marseille13_hauteurs.jpg", cat:"urb",
+  fr:{k:"Bâti 3D", t:"Hauteur des bâtiments du 13e arrondissement de Marseille", d:"Carte tirée de la couche Enriched_Building produite par le workflow FME.", m:"Hauteur = max(MNS − MNT) par emprise à partir du LiDAR HD de l'IGN, hauteur BD TOPO à défaut. Lambert-93."},
+  en:{k:"3D buildings", t:"Building heights in Marseille's 13th arrondissement", d:"Map drawn from the Enriched_Building layer produced by the FME workflow.", m:"Height = max(DSM − DTM) per footprint from IGN LiDAR HD, BD TOPO height otherwise. Lambert-93."}},
+ {img:"img/marseille13_lst.jpg", cat:"urb",
+  fr:{k:"Thermique urbain", t:"Température de surface par bâtiment, 27 juillet 2026", d:"Température moyenne des pixels Landsat touchant chaque emprise de bâtiment.", m:"Landsat 8 Collection 2 Niveau 2, bande ST_B10, statistiques zonales en Python jointes dans FME."},
+  en:{k:"Urban heat", t:"Surface temperature per building, 27 July 2026", d:"Mean temperature of the Landsat pixels touching each building footprint.", m:"Landsat 8 Collection 2 Level 2, band ST_B10, zonal statistics in Python joined in FME."}},
+ {img:"img/toulouse_toitures.jpg", cat:"rs",
+  fr:{k:"Hyperspectral", t:"Matériaux de toiture dans le centre de Toulouse", d:"Toits en tuile (rouge) et autres toitures (olive), une fois la végétation, l'eau et les routes masquées.", m:"Image HySpex à 2 m, signatures MAKESIG et classification MINDIST sous TerrSet."},
+  en:{k:"Hyperspectral", t:"Roofing materials in central Toulouse", d:"Tile roofs (red) and other roofing (olive), once vegetation, water and roads are masked.", m:"HySpex image at 2 m, MAKESIG signatures and MINDIST classification in TerrSet."}},
+ {img:"img/toulouse_workflow.jpg", cat:"rs",
+  fr:{k:"Démarche", t:"Chaîne de traitement de la détection du bâti", d:"De l'ACP à la validation finale : deux classifications comparées puis contrôlées sur 119 points.", m:"TerrSet (PCA, MAKESIG, MINDIST, HYPERSAM, CROSSTAB) et QGIS pour la vérité terrain."},
+  en:{k:"Workflow", t:"Processing chain for built-up detection", d:"From PCA to final validation: two classifications compared, then checked on 119 points.", m:"TerrSet (PCA, MAKESIG, MINDIST, HYPERSAM, CROSSTAB) and QGIS for ground truth."}},
+ {img:"img/saint_nectaire_axial.jpg", cat:"urb",
+  fr:{k:"Syntaxe spatiale", t:"Carte axiale de Saint-Nectaire", d:"Le réseau le plus linéaire des six : un noyau intégré (rouge) et des routes qui s'étirent vers la périphérie (bleu).", m:"DepthmapX, segments colorés selon l'intégration [HH]."},
+  en:{k:"Space syntax", t:"Axial map of Saint-Nectaire", d:"The most linear network of the six: an integrated core (red) and roads stretching out to the periphery (blue).", m:"DepthmapX, segments coloured by Integration [HH]."}},
+ {img:"img/diembering_2021.jpg", cat:"rs",
+  fr:{k:"Occupation du sol", t:"Occupation du sol de Diembéring en 2021", d:"Mangroves, tannes, rizières et végétation de la commune littorale de Diembéring.", m:"Landsat 8 OLI-TIRS, classification supervisée sous ENVI. WGS 84 / UTM zone 28N."},
+  en:{k:"Land cover", t:"Land cover of Diembéring in 2021", d:"Mangroves, salt flats, rice fields and vegetation of the coastal commune of Diembéring.", m:"Landsat 8 OLI-TIRS, supervised classification in ENVI. WGS 84 / UTM zone 28N."}},
+ {img:"img/diembering_1990.jpg", cat:"rs",
+  fr:{k:"Occupation du sol", t:"Occupation du sol de Diembéring en 1990", d:"L'état de référence, à comparer avec la carte de 2021.", m:"Landsat 5 TM du 3 novembre 1990, classification supervisée sous ENVI."},
+  en:{k:"Land cover", t:"Land cover of Diembéring in 1990", d:"The reference state, to compare with the 2021 map.", m:"Landsat 5 TM of 3 November 1990, supervised classification in ENVI."}},
+ {img:"img/diourbel_occupation_sol.jpg", cat:"gis",
+  fr:{k:"Cartographie thématique", t:"Occupation du sol de la région de Diourbel", d:"Cultures pluviales, zones habitées, plans d'eau et réseau de routes et de pistes.", m:"Données DTGC, 2022. WGS 84 / UTM zone 28N."},
+  en:{k:"Thematic mapping", t:"Land use of the Diourbel region", d:"Rainfed crops, settlements, water bodies and the road and track network.", m:"DTGC data, 2022. WGS 84 / UTM zone 28N."}},
+ {img:"img/diourbel_administrative.jpg", cat:"gis",
+  fr:{k:"Carte administrative", t:"Découpage administratif de la région de Diourbel", d:"Les trois départements, Bambey, Diourbel et Mbacké, avec leurs chefs-lieux et le réseau routier.", m:"Données DTGC, 2022. WGS 84 / UTM zone 28N."},
+  en:{k:"Administrative map", t:"Administrative divisions of the Diourbel region", d:"The three departments, Bambey, Diourbel and Mbacké, with their main towns and the road network.", m:"DTGC data, 2022. WGS 84 / UTM zone 28N."}},
+ {img:"img/bambey_localisation.jpg", cat:"gis",
+  fr:{k:"Carte de localisation", t:"Localisation du département de Bambey", d:"Communes, chefs-lieux d'arrondissement et axes de circulation du département.", m:"Données DTGC, 2022. WGS 84 / UTM zone 28N."},
+  en:{k:"Location map", t:"Location of the Bambey department", d:"Communes, district centres and transport routes of the department.", m:"DTGC data, 2022. WGS 84 / UTM zone 28N."}},
+ {img:"img/uasz_campus.jpg", cat:"urb",
+  fr:{k:"SIG urbain", t:"Occupation du sol du campus de l'Université Assane Seck", d:"Constructions, espaces verts, zones de culture, aires de jeu, routes et pistes du campus de Ziguinchor.", m:"Numérisation sur image Google Earth, 2022. WGS 84 / UTM zone 28N."},
+  en:{k:"Urban GIS", t:"Land use of the Assane Seck University campus", d:"Buildings, green spaces, cropland, playgrounds, roads and tracks of the Ziguinchor campus.", m:"Digitised from Google Earth imagery, 2022. WGS 84 / UTM zone 28N."}},
+ {img:"img/soucoupapaye.jpg", cat:"urb",
+  fr:{k:"SIG urbain", t:"Occupation du sol du quartier de Soucoupapaye", d:"Bâti, espaces verts, sols nus et végétation d'un quartier de Ziguinchor, avec ses principaux repères.", m:"Numérisation sur image Google Earth, 2023. WGS 84 / UTM zone 28N."},
+  en:{k:"Urban GIS", t:"Land use of the Soucoupapaye neighbourhood", d:"Built-up areas, green spaces, bare soil and vegetation of a Ziguinchor neighbourhood, with its main landmarks.", m:"Digitised from Google Earth imagery, 2023. WGS 84 / UTM zone 28N."}},
+ {img:"img/yamal_dynamiques.jpg", cat:"rs",
+  fr:{k:"Séries temporelles", t:"Dynamiques du pergélisol autour du port d'Outrenni", d:"Température de surface estivale, écart entre le port et la toundra, NDVI et surfaces en eau de 2014 à 2026.", m:"MODIS MOD11A2 et Sentinel-2 dans Google Earth Engine, graphiques en Python."},
+  en:{k:"Time series", t:"Permafrost dynamics around Port Utrenniy", d:"Summer land surface temperature, port-to-tundra difference, NDVI and water surface from 2014 to 2026.", m:"MODIS MOD11A2 and Sentinel-2 in Google Earth Engine, charts in Python."}}
+];
+
+const ICONS = ['<path d="M9 4 3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5L9 4zM9 4v13.5M15 6.5V20"/>','<path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>','<path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/>','<path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3"/>'];
+
+let lang = (location.hash === "#en") ? "en" : "fr", cat = "all", slide = 0, timer = null;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+
+function renderSlide(){
+  const t = T[lang], c = C[slide], x = c[lang];
+  const n = String(slide+1).padStart(2,"0") + " / " + String(C.length).padStart(2,"0");
+  $("slider").innerHTML = `<button type="button" class="slide-img zoom" data-zoom="${esc(c.img)}" data-cap="${esc(x.t)}" aria-label="${t.zoom}"><img src="${esc(c.img)}" alt="${esc(x.t)}"></button>
+    <div class="slide-txt"><div class="row"><span class="cat c-${c.cat}">${esc(x.k)}</span><span class="count">${n}</span></div>
+    <h3>${esc(x.t)}</h3><p>${esc(x.d)}</p>
+    <div class="meth"><h4>${t.meth}</h4><p>${esc(x.m)}</p></div>
+    <div class="slide-nav"><button type="button" id="prev" aria-label="Précédent / Previous">←</button><button type="button" id="next" aria-label="Suivant / Next">→</button></div></div>`;
+}
+function go(d){ slide = (slide + d + C.length) % C.length; renderSlide(); }
+
+function render(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i]").forEach(e => e.innerHTML = t[e.dataset.i]);
+  $("foot").textContent = "© 2026 " + NAME + ". " + t.foot;
+  $("btn-fr").setAttribute("aria-pressed", lang==="fr"); $("btn-en").setAttribute("aria-pressed", lang==="en");
+  $("links").innerHTML = Object.keys(t.nav).map(k => `<a href="#${k}" data-go="${k}">${t.nav[k]}</a>`).join("");
+  const a = t.about;
+  $("aboutGrid").innerHTML =
+    `<div class="box"><h4>${a[0][0]}</h4><p>${esc(a[0][1])}</p><p class="foot-note">${esc(a[0][2])}</p></div>
+     <div class="box stat"><b>${a[1][0]}</b><span>${esc(a[1][1])}</span><p>${esc(a[1][2])}</p></div>
+     <div class="box"><h4>${a[2][0]}</h4><ul>${a[2][1].map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`;
+  $("skillGrid").innerHTML = t.skills.map((s,i) =>
+    `<div class="box tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[i]}</svg><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join("");
+  $("chips").innerHTML = Object.keys(t.cats).map(k => `<button type="button" data-c="${k}" aria-pressed="${k===cat}">${t.cats[k]}</button>`).join("");
+  $("projGrid").innerHTML = P.filter(p => cat==="all" || p.cats.includes(cat)).map(p => {
+    const x = p[lang];
+    return `<article class="card"><button type="button" class="thumb zoom" data-zoom="${esc(p.img)}" data-cap="${esc(x.t)}" aria-label="${t.zoom}"><img src="${esc(p.img)}" alt="${esc(x.t)}"><span class="tag-over">${esc(x.kind)}</span></button>
+      <div class="body"><div class="row"><span class="cat c-${p.cats[0]}">${t.cats[p.cats[0]]}</span><span class="when">${esc(p.when)}</span></div>
+      <h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><div class="tags">${x.tags.map(s => `<span>${esc(s)}</span>`).join("")}</div></div>
+      <div class="foot"><span>📍 ${esc(x.place)}</span><b>${esc(x.data)}</b>${p.link ? `<a class="lnk" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">Notebook →</a>` : ""}</div></article>`;
+  }).join("");
+  $("others").innerHTML = t.others.map(o => `<div class="other"><div class="row"><h4>${esc(o[0])}</h4>${o[2] ? `<span class="when">${esc(o[2])}</span>` : ""}</div><p>${esc(o[1])}</p></div>`).join("");
+  $("timeline").innerHTML = t.tl.map(r => `<div class="tl"><span class="yr">${esc(r[0])}</span><h3>${esc(r[1])}</h3><p><strong>${esc(r[2])}</strong></p><p>${esc(r[3])}</p></div>`).join("");
+  renderSlide();
+}
+
+function openBox(src, cap, cv){
+  $("lb-img").src = src; $("lb-img").alt = cap; $("lb-cap").textContent = cap;
+  $("lb-tabs").hidden = !cv; $("lightbox").classList.toggle("cv", !!cv);
+  $("lightbox").hidden = false; $("lb-close").focus();
+}
+function closeBox(){ $("lightbox").hidden = true; $("lb-img").removeAttribute("src"); }
+function showCv(v){
+  document.querySelectorAll("#lb-tabs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cv === v));
+  openBox("img/cv_" + v + ".jpg", T[lang].cvCap, true);
+}
+
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]");
+  if (g){ e.preventDefault(); const s = $(g.dataset.go); if (s) s.scrollIntoView({behavior:"smooth", block:"start"}); return; }
+  const z = e.target.closest("[data-zoom]"); if (z){ openBox(z.dataset.zoom, z.dataset.cap, false); return; }
+  const v = e.target.closest("[data-cv]"); if (v){ showCv(v.dataset.cv); return; }
+  if (e.target.closest("#cv-open")){ showCv("alternance"); return; }
+  if (e.target.closest("#lb-close") || e.target.id === "lightbox" || e.target.classList.contains("lb-body")){ closeBox(); return; }
+  const c = e.target.closest("#chips button"); if (c){ cat = c.dataset.c; render(); return; }
+  if (e.target.closest("#prev")) go(-1);
+  if (e.target.closest("#next")) go(1);
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("lightbox").hidden) closeBox(); });
+$("btn-fr").onclick = () => { lang = "fr"; render(); };
+$("btn-en").onclick = () => { lang = "en"; render(); };
+render();
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  const start = () => { clearInterval(timer); timer = setInterval(() => { if ($("lightbox").hidden) go(1); }, 8000); };
+  $("slider").addEventListener("mouseenter", () => clearInterval(timer));
+  $("slider").addEventListener("mouseleave", start);
+  start();
+}
+</script>
+
+</body>
+</html>
